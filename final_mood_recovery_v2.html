@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood Recovery Mission ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;padding:20px 0;min-height:100vh;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ffd6df,#f4b6c2);
+display:flex;justify-content:center;align-items:center;
+overflow:hidden;
+}
+.card{
+background:#fff;width:92%;max-width:760px;
+padding:24px;border-radius:24px;
+max-height:85vh;overflow-y:auto;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+text-align:center;
+}
+p{line-height:1.7;margin:18px 0;font-size:1.1rem}
+h1,h2{color:#e91e63}
+button{
+padding:12px 20px;margin:8px;border:none;border-radius:999px;
+font-size:18px;cursor:pointer
+}
+.primary{background:#e91e63;color:#fff}
+.secondary{background:#ececec}
+.heart{position:fixed;bottom:-30px;font-size:28px;animation:float 10s linear infinite}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-120vh)}}
+</style>
+</head>
+<body>
+<div class="card" id="app">
+<h1>❤️ Mood Recovery Mission ❤️</h1>
+<p>Lagta hai kisi special ladki ka mood thoda kharab hai... 🥺</p>
+<button class="primary" onclick="lock1()">Start Mission ❤️</button>
+</div>
+
+<script>
+for(let i=0;i<25;i++){
+let h=document.createElement('div');
+h.className='heart';h.innerHTML='❤️';
+h.style.left=Math.random()*100+'vw';
+h.style.animationDelay=Math.random()*10+'s';
+document.body.appendChild(h);
+}
+
+function lock1(){
+app.innerHTML=`<h2>🔒 Memory Lock</h2>
+<p>"Yaad hai jo maine tareeke soche the apne chhote Arman ko bada karne ke liye? 🌱🚀✨"</p>
+<p>"Aur tum yeh sab sunkar bahut mazaa le rahi thi... 'chhinari' kahi ki 😂❤️"</p>
+<button class='primary' onclick='lock2()'>Haan, mujhe yaad hai 😆</button>`;
+}
+
+let gussa=0;
+function lock2(){
+app.innerHTML=`<h2>🔒 Smile Lock</h2>
+<p>System check kar raha hai... 🤖</p>
+<p>Kya tum abhi bhi kal wali baat ke liye mujhse gussa ho? 🥺❤️</p>
+<button class='primary' onclick='lock3()'>😊 Nahi</button>
+<button id='haanBtn' class='secondary' onclick='moveGussa()'>😒 Haan</button>`;
+}
+function moveGussa(){
+const m=["Achha ji? 😏","Pakka? 🤨","Soch lo... 😌","System ko yakeen nahi ho raha 😂","Jhooth bolne ki bhi had hoti hai 😭❤️"];
+alert(m[Math.min(gussa,4)]);
+gussa++;
+let b=document.getElementById('haanBtn');
+b.style.position='fixed';
+b.style.left=(10+Math.random()*70)+'vw';
+b.style.top=(20+Math.random()*60)+'vh';
+}
+
+let heartNo=0;
+function lock3(){
+app.innerHTML=`<h2>🔒 Heart Lock ❤️</h2>
+<p>Final verification required... ❤️</p>
+<p>Kya tumhe pata hai ki tum mere liye bahut special ho? 🥺❤️</p>
+<button class='primary' onclick='secretMsg()'>❤️ Pata Hai</button>
+<button id='np' class='secondary' onclick='heartMove()'>🤔 Nahi Pata</button>`;
+}
+function heartMove(){
+const m=["🚨 Error detected","🤨 Sach mein nahi pata?","😭 Itna bhi clueless mat bano","❤️ System strongly disagrees","🥺 Chalo ek aur chance deta hu"];
+alert(m[Math.min(heartNo,4)]);
+heartNo++;
+let b=document.getElementById('np');
+b.style.position='fixed';
+b.style.left=(10+Math.random()*70)+'vw';
+b.style.top=(20+Math.random()*60)+'vh';
+}
+
+function secretMsg(){
+app.innerHTML=`
+<h2>❤️ Secret Message Unlocked ❤️</h2>
+<p>Main kitni der tak bolta rehta tha, kabhi ye karunga, kabhi wo karunga, kabhi ye seekhunga, kabhi wo banaunga... 😆</p>
+<p>Par jab bhi main apne future ke baare mein sochta hu, mujhe yaad aata hai ki meri baaton par sabse zyada yakeen tumne kiya tha. 🥺❤️</p>
+<p>Ho sakta hai main har baar perfect na rahu...</p>
+<p>Par tumhara saath aur support mere liye bahut important hai. 🤍</p>
+<p>Aur ek baat jo main kabhi pasand nahi karta... 🥺</p>
+<p>Wo hai tumhara udaas hona. 🥺</p>
+<p>Pata nahi kyun, lekin jab tum khush hoti ho toh sab kuch thoda better lagta hai...</p>
+<p>Aur jab tum udaas hoti ho, toh mann karta hai ki kisi tarah tumhari smile wapas la du. 🌸❤️</p>
+<p>Bas us ladki ke liye jo meri zindagi mein bahut special hai. ❤️✨</p>
+<p>Aur taaki shayad tumhare chehre par thodi si smile wapas aa jaye. 😊✨</p>
+<p>Aur agar aa gayi ho...</p>
+<p>Toh mission successful. ❤️🥹</p>
+<p><b>Thoda sa smile kar do na? 😊💕</b></p>
+<button class='primary' onclick='maafFlow()'>😊 Smile Aa Gayi</button>
+<button id='abhi' class='secondary' onclick='notYet()'>😒 Abhi Bhi Nahi Aayi</button>`;
+}
+
+let notc=0;
+function notYet(){
+const m=["😒 Pakka?","🤨 Ek baar aur check kar lo","😭 Itni mehnat bhi kaam nahi aayi?","🥺 Dil tod diya tumne","😂 Theek hai, ab mujhe dabao"];
+alert(m[Math.min(notc,4)]);
+notc++;
+if(notc>=5){
+app.innerHTML+=`<br><button class='primary' onclick='finalSecret()'>🤏 Mujhe Dabao</button>`;
+}
+let b=document.getElementById('abhi');
+if(b){b.style.position='fixed';b.style.left=(10+Math.random()*70)+'vw';b.style.top=(20+Math.random()*60)+'vh';}
+}
+
+function maafFlow(){
+const m=["🥹 Sach mein?","❤️ Thank you","🌸 Ab achha lag raha hai","😊 Smile maintain rakhna","🎉 Mission Officially Successful ❤️"];
+alert(m[Math.floor(Math.random()*m.length)]);
+finalSecret();
+}
+
+function finalSecret(){
+app.innerHTML=`<h2>😂❤️ FINAL SECRET FILE UNLOCKED ❤️😂</h2>
+<p>Achha ji... toh tum yahan tak pahunch hi gayi. 😌</p>
+<p>Tum kahin is website ki recording toh nahi kar rahi na? 🤨📱</p>
+<p>Dekho, mujhe tumhari aadatein pata hain. 😭❤️</p>
+<p>Pehle recordings sambhal kar rakhti ho... phir delete karna bhool jaati ho... 😂</p>
+<p>Aaj bhi jab recording waali kahani yaad aati hai na, toh thodi sharam bhi aati hai aur hasi bhi. 😭😂</p>
+<p>Aur agar ab tak tumhare chehre par thodi si bhi smile aa gayi hai... toh meri poori mehnat vasool ho gayi. 🥹❤️</p>
+<button class='primary' onclick='alert("Yayyyy ❤️🥳")'>💖 Maaf Kiya 😊</button>
+<button class='secondary' onclick='tadpao()'>😏 Thoda Aur Tadpaungi</button>`;
+}
+let tc=0;
+function tadpao(){
+const m=["😏 Achha ji","😂 Mazaa aa raha hai na?","😭 Bechare Arman par daya karo","🥺 Itna bhi mat tadpao","❤️ Chalo maan liya tum jeet gayi"];
+alert(m[Math.min(tc,4)]); tc++;
+}
+</script>
+</body>
+</html>
